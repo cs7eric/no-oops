@@ -1,0 +1,88 @@
+{
+  "groups": [
+    {
+      "name": "noops.common",
+      "type": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties"
+    },
+    {
+      "name": "noops.common.cors",
+      "type": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties",
+      "sourceMethod": "getCors()"
+    },
+    {
+      "name": "noops.common.jackson",
+      "type": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$JacksonProps",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties",
+      "sourceMethod": "getJackson()"
+    },
+    {
+      "name": "noops.common.rest-template",
+      "type": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$RestTemplateProps",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties",
+      "sourceMethod": "getRestTemplate()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "noops.common.cors.allow-credentials",
+      "type": "java.lang.Boolean",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.cors.allowed-headers",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.cors.allowed-methods",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.cors.allowed-origin-patterns",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.cors.allowed-origins",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.cors.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.cors.max-age",
+      "type": "java.lang.Long",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$Cors"
+    },
+    {
+      "name": "noops.common.jackson.date-format",
+      "type": "java.lang.String",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$JacksonProps"
+    },
+    {
+      "name": "noops.common.jackson.timezone",
+      "type": "java.lang.String",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$JacksonProps"
+    },
+    {
+      "name": "noops.common.rest-template.connect-timeout",
+      "type": "java.time.Duration",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$RestTemplateProps"
+    },
+    {
+      "name": "noops.common.rest-template.read-timeout",
+      "type": "java.time.Duration",
+      "sourceType": "cn.cccs7.autoconfig.config.CommonAutoConfiguration$CommonProperties$RestTemplateProps"
+    }
+  ],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}

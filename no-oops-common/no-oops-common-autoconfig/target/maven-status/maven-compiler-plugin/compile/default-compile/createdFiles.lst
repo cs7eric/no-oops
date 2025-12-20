@@ -1,0 +1,9 @@
+cn\cccs7\autoconfig\config\CommonAutoConfiguration.class
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$CommonProperties$RestTemplateProps.class
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$2.class
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$CommonProperties.class
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$CommonProperties$Cors.class
+META-INF\spring-configuration-metadata.json
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$CommonProperties$JacksonProps.class
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$1.class
+cn\cccs7\autoconfig\config\CommonAutoConfiguration$TraceIdFilter.class

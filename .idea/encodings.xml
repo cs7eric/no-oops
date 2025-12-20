@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/no-oops-common/no-oops-common-autoconfig/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-common/no-oops-common-autoconfig/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/resources-env/${env}" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-application/no-oops-main-application-controller/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-application/no-oops-main-application-controller/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-application/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-infra/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-infra/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/no-oops-main-starter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/no-oops-main/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

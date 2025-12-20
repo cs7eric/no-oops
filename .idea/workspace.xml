@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e92605c-8627-462b-86c4-9e3883a27c34" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/no-oops-ai/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-autoconfig/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-shared/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/java/cn/cccs7/shared/constant/NoOopsConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/java/cn/cccs7/shared/exception/BizException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/java/cn/cccs7/shared/model/NoOopsResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/no-oops-common-shared/src/main/resources/log4j2-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-application/no-oops-main-application-controller/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-application/no-oops-main-application-controller/src/main/java/cn/cccs7/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-application/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-domain/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-infra/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/no-oops-main-starter/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/no-oops-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="application" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="E:\dev-repo\apache-maven-3.8.8\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="366uxaZvyhtyuWUPBnCesqiXjA9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.no-oops-ai [clean,compile].executor": "Run",
+    "Maven.no-oops-ai [clean,install].executor": "Run",
+    "Maven.no-oops-ai [compile].executor": "Run",
+    "Maven.no-oops-common [clean,compile].executor": "Run",
+    "Maven.no-oops-common [clean,install].executor": "Run",
+    "Maven.no-oops-common [clean].executor": "Run",
+    "Maven.no-oops-common [compile].executor": "Run",
+    "Maven.no-oops-common [maven,clean,compile].executor": "Run",
+    "Maven.no-oops-common [package].executor": "Run",
+    "Maven.no-oops-common-shared [clean].executor": "Run",
+    "Maven.no-oops-common-shared [install].executor": "Run",
+    "Maven.no-oops-main [clean,compile].executor": "Run",
+    "Maven.no-oops-main [clean,install].executor": "Run",
+    "Maven.no-oops-main [clean].executor": "Run",
+    "Maven.no-oops-main [compile].executor": "Run",
+    "Maven.no-oops-main [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.NoOopsApplication.executor": "Debug",
+    "git-widget-placeholder": "feature-dev",
+    "jdk.selected.JAVA_MODULE": "corretto-21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/project-repo/no-oops",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0902527",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.archetype.catalogs",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project-repo\no-oops\no-oops-main\no-oops-main-starter\src\main\java\cn\cccs7\starter" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+      <command value="mvn clean compile" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NoOopsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="no-oops-main-starter" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cccs7.NoOopsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e92605c-8627-462b-86c4-9e3883a27c34" name="Changes" comment="" />
+      <created>1764339590116</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1764339590116</updated>
+      <workItem from="1764339591187" duration="1319000" />
+      <workItem from="1764503567014" duration="3941000" />
+      <workItem from="1765981104013" duration="5322000" />
+      <workItem from="1766040660404" duration="1820000" />
+      <workItem from="1766042512139" duration="1589000" />
+      <workItem from="1766211657214" duration="10053000" />
+      <workItem from="1766225812110" duration="12413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature-dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/no_oops$NoOopsApplication.ic" NAME="NoOopsApplication Coverage Results" MODIFIED="1766227033885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

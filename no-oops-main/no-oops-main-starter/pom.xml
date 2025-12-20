@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.cccs7</groupId>
+        <artifactId>no-oops-main</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>no-oops-main-starter</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <!-- Shared module -->
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-common-shared</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-common-autoconfig</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-main-application-controller</artifactId>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-main-infra</artifactId>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-main-common</artifactId>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring.boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.14.0</version>
+                <configuration>
+                    <release>21</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
