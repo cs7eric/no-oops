@@ -11,9 +11,10 @@
 .idea/
 
 # 忽视所有 target 目录下的文件
-target/
-/dev-sphere-subject/dev-sphere-subject-common/target/
 **/target/
+target/
+*.target
+E:/project-repo/no-oops/**/target/
 
 *.jar
 /log
@@ -23,3 +24,4 @@ target/
 /log/
 
 *.iml
+
