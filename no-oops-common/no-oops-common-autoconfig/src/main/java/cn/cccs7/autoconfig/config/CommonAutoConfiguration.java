@@ -1,48 +1,49 @@
 package cn.cccs7.autoconfig.config;
 
-import org.slf4j.MDC;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
-import org.springframework.lang.Nullable;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.filter.OncePerRequestFilter;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.core.Ordered;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.validation.BindException;
+import org.springframework.lang.Nullable;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.time.Duration;
+import java.time.ZoneId;
+import java.util.TimeZone;
+import java.util.UUID;
 import jakarta.servlet.DispatcherType;
-import org.springframework.web.servlet.config.annotation.CorsRegistration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.validation.BindException;
-
 import java.io.IOException;
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.TimeZone;
-import java.util.UUID;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.core.Ordered;
+import org.springframework.web.filter.OncePerRequestFilter;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
+import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.CorsRegistration;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.slf4j.MDC;
 
 @AutoConfiguration
 @EnableConfigurationProperties(CommonAutoConfiguration.CommonProperties.class)
+@RestControllerAdvice
 public class CommonAutoConfiguration {
+
     private static final String TRACE_HEADER = "X-Trace-Id";
 
     @Bean
@@ -79,7 +80,13 @@ public class CommonAutoConfiguration {
         CommonProperties.RestTemplateProps rt = properties.getRestTemplate();
         Duration connect = rt != null && rt.getConnectTimeout() != null ? rt.getConnectTimeout() : Duration.ofSeconds(2);
         Duration read = rt != null && rt.getReadTimeout() != null ? rt.getReadTimeout() : Duration.ofSeconds(5);
-        RestTemplate tpl = builder.setConnectTimeout(connect).setReadTimeout(read).build();
+        
+        // 使用新的方法替代已过时的setter方法
+        RestTemplate tpl = builder
+                .connectTimeout(connect)
+                .readTimeout(read)
+                .build();
+                
         tpl.getInterceptors().add((request, body, execution) -> {
             String traceId = MDC.get("traceId");
             if (traceId != null && !traceId.isEmpty()) {
@@ -169,6 +176,23 @@ public class CommonAutoConfiguration {
         }
     }
 
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<String> handleValidationExceptions(MethodArgumentNotValidException ex) {
+        StringBuilder errors = new StringBuilder();
+        ex.getBindingResult().getFieldErrors().forEach(error -> 
+            errors.append(error.getField()).append(": ").append(error.getDefaultMessage()).append("; ")
+        );
+        return ResponseEntity.badRequest().body(errors.toString());
+    }
+
+    @ExceptionHandler(BindException.class)
+    public ResponseEntity<String> handleBindException(BindException ex) {
+        StringBuilder errors = new StringBuilder();
+        ex.getBindingResult().getFieldErrors().forEach(error ->
+            errors.append(error.getField()).append(": ").append(error.getDefaultMessage()).append("; ")
+        );
+        return ResponseEntity.badRequest().body(errors.toString());
+    }
 
     @ConfigurationProperties(prefix = "noops.common")
     public static class CommonProperties {

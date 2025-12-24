@@ -29,10 +29,40 @@
             <artifactId>no-oops-common-shared</artifactId>
             <version>${no-oops-common-shared.version}</version>
         </dependency>
-
-
-
-
+        
+        <!-- Project infra module -->
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-main-infra</artifactId>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+        
+        <!-- Project domain module -->
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-main-domain</artifactId>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+        
+        <!-- Project api module -->
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-main-api</artifactId>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+        
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

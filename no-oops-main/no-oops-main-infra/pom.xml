@@ -33,7 +33,19 @@
         <dependency>
             <groupId>cn.cccs7</groupId>
             <artifactId>no-oops-main-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${no-oops-main.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-common-autoconfig</artifactId>
+            <version>${no-oops-common-autoconfig.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.cccs7</groupId>
+            <artifactId>no-oops-common-shared</artifactId>
+            <version>${no-oops-common-shared.version}</version>
         </dependency>
 
 

@@ -11,7 +11,6 @@
 
     <artifactId>no-oops-common-shared</artifactId>
     <packaging>jar</packaging>
-    <version>1.1-alpha</version>
 
     <dependencies>
         <!-- Spring Boot Web for REST APIs -->
@@ -110,6 +109,7 @@
                 <configuration>
                     <source>${java.version}</source>
                     <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
                     <annotationProcessorPaths>
                         <path>
                             <groupId>org.projectlombok</groupId>

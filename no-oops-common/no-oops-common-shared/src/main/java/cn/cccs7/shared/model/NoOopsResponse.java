@@ -40,9 +40,53 @@ public class NoOopsResponse<T> implements Serializable {
      * Timestamp
      */
     private LocalDateTime timestamp;
-
+    
     private LocalDateTime requestedTime;
-
+    
     private String traceId;
-
+    
+    /**
+     * Check if the response is successful
+     * @return true if successful, false otherwise
+     */
+    public boolean isSuccess() {
+        return Boolean.TRUE.equals(this.success);
+    }
+    
+    /**
+     * Check if the response is failed
+     * @return true if failed, false otherwise
+     */
+    public boolean isFailure() {
+        return !isSuccess();
+    }
+    
+    // 添加 setter 方法以解决编译错误
+    public void setSuccess(Boolean success) {
+        this.success = success;
+    }
+    
+    public void setCode(String code) {
+        this.code = code;
+    }
+    
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    
+    public void setData(T data) {
+        this.data = data;
+    }
+    
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+    
+    public void setRequestedTime(LocalDateTime requestedTime) {
+        this.requestedTime = requestedTime;
+    }
+    
+    public void setTraceId(String traceId) {
+        this.traceId = traceId;
+    }
 }

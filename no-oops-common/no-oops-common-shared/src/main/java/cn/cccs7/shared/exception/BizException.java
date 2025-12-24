@@ -14,7 +14,7 @@ public class BizException extends RuntimeException {
 
     /**
      * Constructor with explicit code and message
-     * * @param code    The business error code
+     * @param code    The business error code
      * @param message The user-friendly error message
      */
     public BizException(String code, String message) {
@@ -30,5 +30,22 @@ public class BizException extends RuntimeException {
         super(message, cause);
         this.code = code;
         this.message = message;
+    }
+    
+    /**
+     * Get the error code
+     * @return error code
+     */
+    public String getCode() {
+        return code;
+    }
+    
+    /**
+     * Get the error message
+     * @return error message
+     */
+    @Override
+    public String getMessage() {
+        return message;
     }
 }

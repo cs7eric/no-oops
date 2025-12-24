@@ -6,10 +6,14 @@ E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cc
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\exception\GlobalExceptionHandler.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\mapstruct\BaseMapper.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\model\NoOopsResponse.java
+E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\model\Response.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\model\util\NoOopsResponseBuilder.java
+E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\po\BasePO.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\repository\BaseRepository.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\service\BaseService.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\service\impl\BaseServiceImpl.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\util\DateUtils.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\util\JsonUtils.java
+E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\util\NoOopsStringUtils.java
+E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\util\ResponseBuilder.java
 E:\project-repo\no-oops\no-oops-common\no-oops-common-shared\src\main\java\cn\cccs7\shared\util\StringUtils.java

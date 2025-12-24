@@ -47,4 +47,26 @@ public interface BaseMapper<S, T> {
      */
     @IterableMapping(qualifiedByName = "toSource")
     List<S> toSourceList(List<T> targets);
+    
+    /**
+     * Convert source object to target object with additional processing
+     *
+     * @param source source object
+     * @return target object
+     */
+    @Named("toTargetWithProcessing")
+    default T toTargetWithProcessing(S source) {
+        return toTarget(source);
+    }
+    
+    /**
+     * Convert target object to source object with additional processing
+     *
+     * @param target target object
+     * @return source object
+     */
+    @Named("toSourceWithProcessing")
+    default S toSourceWithProcessing(T target) {
+        return toSource(target);
+    }
 }

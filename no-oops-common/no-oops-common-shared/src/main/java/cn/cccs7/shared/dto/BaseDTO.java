@@ -18,6 +18,11 @@ public class BaseDTO implements Serializable {
     private static final long serialVersionUID = 1L;
     
     /**
+     * Entity ID
+     */
+    private Long id;
+    
+    /**
      * Creation timestamp
      */
     private LocalDateTime createdAt;
@@ -26,4 +31,24 @@ public class BaseDTO implements Serializable {
      * Last update timestamp
      */
     private LocalDateTime updatedAt;
+    
+    /**
+     * Creator
+     */
+    private String createdBy;
+    
+    /**
+     * Last modifier
+     */
+    private String updatedBy;
+    
+    /**
+     * Deletion status
+     */
+    private Boolean isDeleted = false;
+    
+    /**
+     * Version for optimistic locking
+     */
+    private Long version;
 }

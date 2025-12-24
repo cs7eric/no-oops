@@ -1,72 +1,73 @@
 package cn.cccs7.shared.exception;
 
-import cn.cccs7.shared.model.NoOopsResponse;
-import cn.cccs7.shared.model.util.NoOopsResponseBuilder;
-import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
+import cn.cccs7.shared.model.Response;
+import cn.cccs7.shared.util.ResponseBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindException;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.servlet.NoHandlerFoundException;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * Global Exception Handler to intercept and unify all exceptions thrown by Controllers
+ * Global exception handler for REST controllers
  */
-@Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+    
+    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    /**
-     * Handle custom business exceptions (BizException)
-     * Logged as INFO as these are expected business logic flows
-     */
     @ExceptionHandler(BizException.class)
-    public NoOopsResponse<Void> handleBizException(BizException e, HttpServletRequest request) {
-        log.info("Business Exception: uri={}, code={}, message={}",
-                request.getRequestURI(), e.getCode(), e.getMessage());
-
-        return NoOopsResponseBuilder.<Void>builder()
-                .success(false)
-                .code(e.getCode())
-                .message(e.getMessage())
-                .build();
+    public ResponseEntity<Response<Map<String, String>>> handleBizException(BizException e) {
+        log.error("Business exception occurred: {}", e.getMessage(), e);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ResponseBuilder.error(e.getCode(), e.getMessage()));
     }
 
-    /**
-     * Handle Bean Validation exceptions
-     * Triggered by @Valid, @NotNull, @Size, etc.
-     */
-    @ExceptionHandler({MethodArgumentNotValidException.class, BindException.class})
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public NoOopsResponse<Void> handleValidationException(Exception e, HttpServletRequest request) {
-        String message = e instanceof MethodArgumentNotValidException ex
-                ? ex.getBindingResult().getAllErrors().get(0).getDefaultMessage()
-                : ((BindException) e).getBindingResult().getAllErrors().get(0).getDefaultMessage();
-
-        log.warn("Validation Failed: uri={}, message={}", request.getRequestURI(), message);
-
-        return NoOopsResponseBuilder.<Void>builder()
-                .success(false)
-                .code("400")
-                .message(message)
-                .build();
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Response<Map<String, String>>> handleValidationException(MethodArgumentNotValidException e) {
+        log.warn("Validation exception occurred: {}", e.getMessage());
+        Map<String, String> errors = new HashMap<>();
+        e.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ResponseBuilder.error("VALIDATION_ERROR", "Validation failed"));
     }
 
-    /**
-     * Handle unexpected system exceptions
-     * Logged as ERROR for alerting and troubleshooting
-     */
-    @ExceptionHandler(Throwable.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public NoOopsResponse<Void> handleThrowable(Throwable e, HttpServletRequest request) {
-        log.error("Internal System Error: uri={}", request.getRequestURI(), e);
+    @ExceptionHandler(BindException.class)
+    public ResponseEntity<Response<Map<String, String>>> handleBindException(BindException e) {
+        log.warn("Bind exception occurred: {}", e.getMessage());
+        Map<String, String> errors = new HashMap<>();
+        e.getBindingResult().getAllErrors().forEach(error -> {
+            String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(ResponseBuilder.error("BIND_ERROR", "Bind failed"));
+    }
+    
+    @ExceptionHandler(NoHandlerFoundException.class)
+    public ResponseEntity<Response<Void>> handleNotFoundException(NoHandlerFoundException e) {
+        log.error("Resource not found: ", e);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(ResponseBuilder.error("NOT_FOUND", "Requested resource not found"));
+    }
 
-        return NoOopsResponseBuilder.<Void>builder()
-                .success(false)
-                .code("500")
-                .message("Internal Server Error, please contact administrator")
-                .build();
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Response<String>> handleGenericException(Exception e) {
+        log.error("Unexpected exception occurred: {}", e.getMessage(), e);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(ResponseBuilder.error("INTERNAL_ERROR", "Internal server error"));
     }
 }
